@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 enum Direction
@@ -41,6 +42,15 @@ public class Oscillator : MonoBehaviour
         direction = StartingDirection;
     }
 
+    float scale(float m){
+        if(direction==Direction.Left){
+            return (m/(OscillateLeftTickAmount))*((float)Math.PI);
+        }
+        else{
+            return (m/(OscillateRightTickAmount))*((float)Math.PI);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -53,13 +63,15 @@ public class Oscillator : MonoBehaviour
                 direction=Direction.Left;
                 counter=OscillateLeftTickAmount;
             }
-        }
+        }   
+    
+        float speed = (float)Math.Sin(scale(counter)) * OscillateSpeed;
 
         if(direction==Direction.Left){
-            transform.Translate(Vector3.left * OscillateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         else{
-            transform.Translate(Vector3.right * OscillateSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
 
         counter--;
