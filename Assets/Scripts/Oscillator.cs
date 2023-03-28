@@ -32,20 +32,25 @@ public class Oscillator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(StartingDirection == Direction.Left){
+        if(StartingDirection == Direction.Left)
+        {
             counter = OscillateLeftTickAmount;
         }
-        else{
+        else
+        {
             counter = OscillateRightTickAmount;
         }
         direction = StartingDirection;
     }
 
-    float scale(float m){
-        if(direction == Direction.Left){
+    float scale(float m)
+    {
+        if(direction == Direction.Left)
+        {
             return (m / (OscillateLeftTickAmount)) * ((float)Math.PI);
         }
-        else{
+        else
+        {
             return (m / (OscillateRightTickAmount)) * ((float)Math.PI);
         }
     }
@@ -53,21 +58,26 @@ public class Oscillator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter == 0){
-            if(direction == Direction.Left){
+        if(counter == 0)
+        {
+            if(direction == Direction.Left)
+            {
                 direction = Direction.Right;
                 counter = OscillateRightTickAmount;
             }
-            else{
+            else
+            {
                 direction = Direction.Left;
                 counter = OscillateLeftTickAmount;
             }
         }   
         float speed = (float)Math.Sin(scale(counter)) * OscillateSpeed;
-        if(direction == Direction.Left){
+        if(direction == Direction.Left)
+        {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
-        else{
+        else
+        {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
         counter--;
