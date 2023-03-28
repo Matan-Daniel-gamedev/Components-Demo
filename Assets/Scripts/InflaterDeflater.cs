@@ -24,9 +24,9 @@ public class InflaterDeflater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter == 0)
+        if (counter == 0)
         {
-            if(currentDirection == Direction.Inflate)
+            if (currentDirection == Direction.Inflate)
             {
                 currentDirection = Direction.Deflate;
             }
@@ -37,7 +37,7 @@ public class InflaterDeflater : MonoBehaviour
             counter = TickAmount;
         }
 
-        if(currentDirection == Direction.Inflate)
+        if (currentDirection == Direction.Inflate)
         {
             transform.localScale += inflateAmount * new Vector3(1.0f,1.0f,0) * Time.deltaTime;
         }
