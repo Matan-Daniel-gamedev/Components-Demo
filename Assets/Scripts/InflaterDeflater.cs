@@ -24,7 +24,7 @@ public class InflaterDeflater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter==0){
+        if(counter == 0){
             if(currentDirection == Direction.Inflate){
                 currentDirection = Direction.Deflate;
             }else{

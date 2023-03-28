@@ -13,35 +13,40 @@ public class Oscillator : MonoBehaviour
 {
     // [SerializeField]
     Vector3 speed = new Vector3(0, 0, 0);
+
     [SerializeField]
     float OscillateSpeed = 5.0f;
+
     [SerializeField]
     int OscillateLeftTickAmount = 300;
+
     [SerializeField]
     int OscillateRightTickAmount = 300;
+
     [SerializeField]
     Direction StartingDirection = Direction.Left;
     Direction direction = Direction.Left;
-    int counter=0;
-    float currentSpeed=1.0f;
+
+    int counter = 0;
+    float currentSpeed = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
-        if(StartingDirection==Direction.Left){
-            counter=OscillateLeftTickAmount;
+        if(StartingDirection == Direction.Left){
+            counter = OscillateLeftTickAmount;
         }
         else{
-            counter=OscillateRightTickAmount;
+            counter = OscillateRightTickAmount;
         }
         direction = StartingDirection;
     }
 
     float scale(float m){
-        if(direction==Direction.Left){
-            return (m/(OscillateLeftTickAmount))*((float)Math.PI);
+        if(direction == Direction.Left){
+            return (m / (OscillateLeftTickAmount)) * ((float)Math.PI);
         }
         else{
-            return (m/(OscillateRightTickAmount))*((float)Math.PI);
+            return (m / (OscillateRightTickAmount)) * ((float)Math.PI);
         }
     }
 
@@ -49,17 +54,17 @@ public class Oscillator : MonoBehaviour
     void Update()
     {
         if(counter == 0){
-            if(direction==Direction.Left){
-                direction=Direction.Right;
-                counter=OscillateRightTickAmount;
+            if(direction == Direction.Left){
+                direction = Direction.Right;
+                counter = OscillateRightTickAmount;
             }
             else{
-                direction=Direction.Left;
-                counter=OscillateLeftTickAmount;
+                direction = Direction.Left;
+                counter = OscillateLeftTickAmount;
             }
         }   
         float speed = (float)Math.Sin(scale(counter)) * OscillateSpeed;
-        if(direction==Direction.Left){
+        if(direction == Direction.Left){
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         else{
