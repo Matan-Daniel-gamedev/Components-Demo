@@ -39,11 +39,11 @@ public class InflaterDeflater : MonoBehaviour
 
         if (currentDirection == Direction.Inflate)
         {
-            transform.localScale += inflateAmount * new Vector3(1.0f,1.0f,0) * Time.deltaTime;
+            transform.localScale += inflateAmount * new Vector3(1.0f, 1.0f, 0) * Time.deltaTime;
         }
         else
         {
-            transform.localScale -= inflateAmount * new Vector3(1.0f,1.0f,0) * Time.deltaTime;
+            transform.localScale -= inflateAmount * new Vector3(1.0f, 1.0f, 0) * Time.deltaTime;
         }
 
         counter--;

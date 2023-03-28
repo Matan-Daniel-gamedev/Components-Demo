@@ -70,7 +70,7 @@ public class Oscillator : MonoBehaviour
                 direction = Direction.Left;
                 counter = OscillateLeftTickAmount;
             }
-        }   
+        }
         float speed = (float)Math.Sin(scale(counter)) * OscillateSpeed;
         if (direction == Direction.Left)
         {
