@@ -11,7 +11,7 @@ public class InflaterDeflater : MonoBehaviour
     }
 
     private Direction currentDirection = Direction.Inflate;
-    public int TickAmount = 500;
+    public int TickAmount = 200;
     public float inflateAmount = 1.0f;
     private int counter;
 

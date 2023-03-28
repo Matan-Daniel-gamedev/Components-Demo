@@ -15,13 +15,13 @@ public class Oscillator : MonoBehaviour
     Vector3 speed = new Vector3(0, 0, 0);
 
     [SerializeField]
-    float OscillateSpeed = 1.0f;
+    float OscillateSpeed = 5.0f;
 
     [SerializeField]
-    int OscillateLeftTickAmount = 5;
+    int OscillateLeftTickAmount = 300;
 
     [SerializeField]
-    int OscillateRightTickAmount = 5;
+    int OscillateRightTickAmount = 300;
 
     [SerializeField]
     Direction StartingDirection = Direction.Left;

@@ -21,15 +21,6 @@ public class HideShow : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = isHidden;
             isHidden = !isHidden;
-
-            // if(isHidden){
-            //     gameObject.SetActive(true);
-            //     isHidden=false;
-            // }else{
-            //     gameObject.SetActive(false);
-            //     isHidden=true;
-            // }
-            
         }
     }
 }
